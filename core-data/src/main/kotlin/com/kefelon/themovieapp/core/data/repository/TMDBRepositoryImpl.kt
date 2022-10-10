@@ -12,7 +12,7 @@ class TMDBRepositoryImpl @Inject constructor(
 ) : TMDBRepository {
 
     override suspend fun getPopularMovies(page: Int): Result<MovieResponse> {
-        return tmdbService.getPopularMovies(1)
+        return tmdbService.getPopularMovies(page)
     }
 
 

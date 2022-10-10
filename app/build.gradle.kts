@@ -42,12 +42,23 @@ android {
     }
 
     buildTypes {
+        debug {
+
+            buildConfigField("boolean", "IS_DEVELOPMENT", "true")
+            buildConfigField("String", "IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/original\"")
+
+        }
+
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            buildConfigField("boolean", "IS_DEVELOPMENT", "false")
+            buildConfigField("String", "IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/original\"")
+
         }
     }
 
@@ -96,6 +107,14 @@ dependencies {
     //region Navigation
     implementation(Dependencies.navigationFragment)
     implementation(Dependencies.navigationUI)
+    //endregion
+
+    //region ViewPager2
+    implementation(Dependencies.viewPager2)
+    //endregion
+
+    //region CircleImageView
+    implementation(Dependencies.circleImageView)
     //endregion
 
     testImplementation(Dependencies.junit)

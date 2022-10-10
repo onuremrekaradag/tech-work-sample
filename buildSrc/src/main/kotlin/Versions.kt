@@ -45,4 +45,8 @@ object Versions {
     const val viewpager2 = "1.0.0"
     //endregion
 
+    //region CircleImageView
+    const val circleImageView = "3.1.0"
+    //endregion
+
 }

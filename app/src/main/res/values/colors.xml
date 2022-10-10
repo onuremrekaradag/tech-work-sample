@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#716F6F</color>
 
     <color name="success_snackbar_background">#22931C</color>
     <color name="warning_snackbar_background">#FFEB3B</color>

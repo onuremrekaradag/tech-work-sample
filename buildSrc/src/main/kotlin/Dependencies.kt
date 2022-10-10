@@ -49,6 +49,11 @@ object Dependencies {
     //endregion
 
     //region ViewPager2
-    val viewPager2 by lazy {"androidx.viewpager2:viewpager2:${Versions.viewpager2}"}
+    val viewPager2 by lazy { "androidx.viewpager2:viewpager2:${Versions.viewpager2}" }
+    //endregion
+
+    //region CircleImageView
+    val circleImageView by lazy { "de.hdodenhof:circleimageview:${Versions.circleImageView}" }
+    //endregion
 
 }
