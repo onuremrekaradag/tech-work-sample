@@ -53,7 +53,7 @@ android {
 
     packagingOptions {
 
-            exclude( "META-INF/gradle/incremental.annotation.processors")
+        exclude("META-INF/gradle/incremental.annotation.processors")
 
     }
 
@@ -91,6 +91,11 @@ dependencies {
 
     //region Timber
     implementation(Dependencies.timber)
+    //endregion
+
+    //region Navigation
+    implementation(Dependencies.navigationFragment)
+    implementation(Dependencies.navigationUI)
     //endregion
 
     testImplementation(Dependencies.junit)

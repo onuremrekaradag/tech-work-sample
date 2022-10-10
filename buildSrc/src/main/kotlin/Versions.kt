@@ -37,4 +37,12 @@ object Versions {
     const val coroutines = "1.6.4"
     //endregion
 
+    //region Navigation
+    const val navigation = "2.5.2"
+    //endregion
+
+    //region ViewPager2
+    const val viewpager2 = "1.0.0"
+    //endregion
+
 }

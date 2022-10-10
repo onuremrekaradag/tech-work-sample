@@ -43,4 +43,12 @@ object Dependencies {
     val coroutines by lazy { "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}" }
     //endregion
 
+    //region Navigation
+    val navigationFragment by lazy { "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}" }
+    val navigationUI by lazy { "androidx.navigation:navigation-ui-ktx:${Versions.navigation}" }
+    //endregion
+
+    //region ViewPager2
+    val viewPager2 by lazy {"androidx.viewpager2:viewpager2:${Versions.viewpager2}"}
+
 }

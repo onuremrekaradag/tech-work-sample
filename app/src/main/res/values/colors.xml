@@ -12,5 +12,11 @@
     <color name="warning_snackbar_background">#FFEB3B</color>
     <color name="error_snackbar_background">#FC2500</color>
 
+    <color name="background_gradient_start">#1E1F2B</color>
+    <color name="background_gradient_center">#0F1421</color>
+    <color name="background_gradient_end">#151720</color>
+
+
+
 
 </resources>
