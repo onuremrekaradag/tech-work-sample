@@ -1,13 +1,13 @@
 object Versions {
 
-    const val androidCore = "1.9.0"
+    const val androidCore = "1.8.0"
     const val appCompat = "1.5.1"
     const val googleMaterial = "1.6.1"
     const val constraintLayout = "2.1.4"
     const val junit = "4.13.2"
 
     const val lifecycle = "2.1.0"
-    const val activity = "1.6.0"
+    const val activity = "1.5.0"
 
     //region Retrofit
     const val retrofit = "2.9.0"
