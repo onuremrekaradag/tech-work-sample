@@ -20,8 +20,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
-//private val mViewModelClass: Class<VM>
-abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel>() : AppCompatActivity(),
+abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity(),
     BaseActivityListener {
 
     lateinit var imm: InputMethodManager
@@ -73,7 +72,6 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel>() : AppCom
 
 
     //region SnackBar
-
     override fun showSnackBarSuccessMessage(message: String?) {
         binding.root.showSnackBar(message, R.color.success_snackbar_background)
     }
