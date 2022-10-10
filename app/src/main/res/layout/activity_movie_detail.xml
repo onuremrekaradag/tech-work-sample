@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movieDetailViewModel"
+            type="com.kefelon.themovieapp.ui.detail.MovieDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image_view_poster_back"
+            loadImageUrl="@{movieDetailViewModel.movieDetailLiveData.backdropPath}"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/gray"
+            android:gravity="top"
+            android:scaleType="fitXY"
+            android:text="MOVIE DETAIL"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{movieDetailViewModel.movieDetailLiveData.title}"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_poster_back"
+            tools:text="Name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

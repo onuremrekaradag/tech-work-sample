@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginStart="10dp"
+            android:onClick="@{()->listener.onMovieClicked(movieModel)}"
             app:cardBackgroundColor="@color/gray"
             app:cardCornerRadius="20dp"
             app:cardElevation="0dp"

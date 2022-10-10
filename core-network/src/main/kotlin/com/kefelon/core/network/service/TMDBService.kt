@@ -33,20 +33,20 @@ interface TMDBService {
     @GET(GET_NOW_PLAYING_MOVIES)
     suspend fun getNowPlayingMovies(
         @Query(REQUEST_PAGE) page: Int
-    ): MovieResponse
+    ): Result<MovieResponse>
 
     @GET(GET_TOP_RATED_MOVIES)
     suspend fun getTopRatedMovies(
         @Query(REQUEST_PAGE) page: Int
-    ): MovieResponse
+    ): Result<MovieResponse>
 
     @GET(GET_UP_COMING_MOVIES)
     suspend fun getUpcomingMovies(
         @Query(REQUEST_PAGE) page: Int
-    ): MovieResponse
+    ): Result<MovieResponse>
 
     @GET(GET_MOVIE_DETAIL)
     suspend fun getMovieDetail(
         @Path(REQUEST_MOVIE_ID) movieId: String
-    ): MovieDetail
+    ): Result<MovieDetail>
 }
