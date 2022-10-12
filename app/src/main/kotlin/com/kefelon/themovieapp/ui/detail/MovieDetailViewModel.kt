@@ -18,8 +18,10 @@ class MovieDetailViewModel @Inject constructor(
 ) : BaseViewModel(tmdbRepository) {
 
     var movieId: Int? = null
+    var isFavorite: Boolean = false
     val movieDetailLiveData = MutableLiveData<MovieDetail>()
 
+    val processSuccess = MutableLiveData<String>()
     val processError = MutableLiveData<String>()
 
 
@@ -38,8 +40,14 @@ class MovieDetailViewModel @Inject constructor(
         }
     }
 
-    private fun addFavoriteMovieToRoom() {
-        movieDetailLiveData.value?.let { tmdbRepository.setFavoriteMovie(it) }
+    fun triggerFavoriteMovieRoom() {
+        if (isFavorite) {
+            processSuccess.value = "Movie removed from your favorites."
+            movieDetailLiveData.value?.let { tmdbRepository.deleteFavoriteMovie(it) }
+        } else {
+            processSuccess.value = "Movie added to your favorites."
+            movieDetailLiveData.value?.let { tmdbRepository.setFavoriteMovie(it) }
+        }
     }
 
 

@@ -31,6 +31,7 @@ class MovieDetailActivity : BaseActivity<ActivityMovieDetailBinding, MovieDetail
         bundleOperations()
         observeLiveData()
         mViewModel.getMovieDetail()
+        setupOnClickListeners()
     }
 
     private fun bundleOperations() {
@@ -39,9 +40,22 @@ class MovieDetailActivity : BaseActivity<ActivityMovieDetailBinding, MovieDetail
         }
     }
 
+    private fun setupOnClickListeners() {
+        binding.imageViewFavorite.setOnClickListener {
+            mViewModel.triggerFavoriteMovieRoom()
+            mViewModel.isFavorite = !mViewModel.isFavorite
+            binding.imageViewFavorite.setImageResource(if (mViewModel.isFavorite) R.drawable.icon_favorite_filled else R.drawable.icon_favorite)
+        }
+    }
+
+
     private fun observeLiveData() {
         mViewModel.movieDetailLiveData.observe(this, Observer { movieDetail ->
 
+        })
+
+        mViewModel.processSuccess.observe(this, Observer { message ->
+            showSnackBarSuccessMessage(message)
         })
 
         mViewModel.processError.observe(this, Observer { message ->

@@ -3,7 +3,6 @@ package com.kefelon.themovieapp.extensions
 import android.graphics.Color
 import android.view.View
 import android.widget.ImageView
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
