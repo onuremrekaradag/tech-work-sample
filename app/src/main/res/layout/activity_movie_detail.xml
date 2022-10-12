@@ -9,6 +9,7 @@
         <variable
             name="movieDetailViewModel"
             type="com.kefelon.themovieapp.ui.detail.MovieDetailViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

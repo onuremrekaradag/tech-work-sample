@@ -38,5 +38,9 @@ class MovieDetailViewModel @Inject constructor(
         }
     }
 
+    private fun addFavoriteMovieToRoom() {
+        movieDetailLiveData.value?.let { tmdbRepository.setFavoriteMovie(it) }
+    }
+
 
 }

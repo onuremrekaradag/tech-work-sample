@@ -1,6 +1,5 @@
 package com.kefelon.themovieapp.ui.main.adapter
 
-import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil

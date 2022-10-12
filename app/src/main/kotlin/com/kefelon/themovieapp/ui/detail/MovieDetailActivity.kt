@@ -6,6 +6,7 @@ import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.Observer
 import com.kefelon.themovieapp.R
 import com.kefelon.themovieapp.base.BaseActivity
+import com.kefelon.themovieapp.core.model.MovieDetail
 import com.kefelon.themovieapp.databinding.ActivityMainBinding
 import com.kefelon.themovieapp.databinding.ActivityMovieDetailBinding
 import com.kefelon.themovieapp.ui.main.adapter.MainPagerAdapter

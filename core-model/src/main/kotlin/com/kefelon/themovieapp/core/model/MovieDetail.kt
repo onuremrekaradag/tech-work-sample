@@ -2,8 +2,10 @@ package com.kefelon.themovieapp.core.model
 
 import ProductionCountries
 import SpokenLanguages
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "movie_detail")
 data class MovieDetail(
     @SerializedName("adult")
     var adult: Boolean,

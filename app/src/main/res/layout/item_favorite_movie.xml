@@ -7,11 +7,11 @@
 
         <variable
             name="movieModel"
-            type="com.kefelon.themovieapp.core.model.Movie" />
+            type="com.kefelon.themovieapp.core.model.MovieDetail" />
 
         <variable
             name="listener"
-            type="com.kefelon.themovieapp.ui.main.adapter.MovieAdapterInterface" />
+            type="com.kefelon.themovieapp.ui.main.fragment.favorite_movies.adapter.FavoriteMovieAdapterInterface" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

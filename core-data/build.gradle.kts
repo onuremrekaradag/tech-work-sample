@@ -45,6 +45,7 @@ dependencies {
     //region Modules
     api(project(":core-model"))
     implementation(project(":core-network"))
+    implementation(project(":core-database"))
     //endregion
 
 }

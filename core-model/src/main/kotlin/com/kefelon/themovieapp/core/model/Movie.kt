@@ -3,7 +3,6 @@ package com.kefelon.themovieapp.core.model
 import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "movie")
 data class Movie(
     @SerializedName("poster_path")
     var posterPath: String?,

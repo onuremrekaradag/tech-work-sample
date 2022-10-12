@@ -8,7 +8,6 @@ import com.donanimhaber.dhandroid.dh_app_mvc.utils.EndlessRecyclerViewScrollList
 import com.kefelon.themovieapp.R
 import com.kefelon.themovieapp.base.BaseFragment
 import com.kefelon.themovieapp.core.model.Movie
-import com.kefelon.themovieapp.core.model.MovieDetail
 import com.kefelon.themovieapp.databinding.FragmentMoviesBinding
 import com.kefelon.themovieapp.ui.detail.MovieDetailActivity
 import com.kefelon.themovieapp.ui.main.adapter.MovieAdapter

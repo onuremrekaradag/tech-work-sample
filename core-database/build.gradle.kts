@@ -37,6 +37,7 @@ dependencies {
 
     //region Dagger Hilt
     implementation(Dependencies.daggerHilt)
+    implementation(Dependencies.daggerHiltCompiler)
     //endregion
 
     //region Room

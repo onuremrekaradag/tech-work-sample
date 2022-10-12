@@ -26,4 +26,10 @@ interface TMDBRepository {
         movieId: String
     ): Result<MovieDetail>
 
+    suspend fun getFavoriteMovies(): List<MovieDetail>
+
+    fun setFavoriteMovie(movieDetail: MovieDetail)
+
+    fun deleteFavoriteMovie(movieDetail: MovieDetail)
+
 }
