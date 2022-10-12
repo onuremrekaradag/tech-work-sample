@@ -1,15 +1,15 @@
 plugins {
+    kotlin("kapt")
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
 }
 
 android {
-    compileSdk = Configuration.compileSdk
+    compileSdk = 32
 
     defaultConfig {
-        minSdk = Configuration.minSdk
-        targetSdk = Configuration.targetSdk
+        minSdk = 21
+        targetSdk = 32
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -35,12 +35,18 @@ android {
 
 dependencies {
 
-    implementation(Dependencies.retrofit)
-    implementation(Dependencies.gsonConvertor)
+    //region Dagger Hilt
+    implementation(Dependencies.daggerHilt)
+    //endregion
 
     //region Room
     implementation(Dependencies.roomRuntime)
     annotationProcessor(Dependencies.roomCompilerAP)
     kapt(Dependencies.roomCompilerKapt)
     //endregion
+
+    //Region modules
+    implementation(project(":core-model"))
+    //endregion
+
 }

@@ -60,4 +60,12 @@ object Dependencies {
     val transformationLayout by lazy { "com.github.skydoves:transformationlayout:${Versions.transformationLayout}" }
     //endregion
 
+
+    //region Room
+    val roomRuntime by lazy { "androidx.room:room-runtime:${Versions.room}" }
+    val roomCompilerAP by lazy { "androidx.room:room-runtime:${Versions.room}" }
+    val roomCompilerKapt by lazy { "androidx.room:room-runtime:${Versions.room}" }
+    //endregion
+
+
 }

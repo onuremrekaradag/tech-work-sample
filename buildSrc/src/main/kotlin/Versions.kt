@@ -53,4 +53,8 @@ object Versions {
     const val transformationLayout = "1.1.1"
     //endregion
 
+    //region Room
+    const val room = "2.4.3"
+    //endregion
+
 }
