@@ -121,6 +121,10 @@ dependencies {
     implementation(Dependencies.transformationLayout)
     //endregion
 
+    //region Swipe Refresh Layout
+    implementation(Dependencies.swipeRefreshLayout)
+    //endregion
+
     testImplementation(Dependencies.junit)
 
     //region Modules

@@ -33,11 +33,18 @@ class FavoriteMoviesFragment :
     override fun init() {
         binding.listener = this
         setupRecyclerView()
+        setupSwipeRefreshListener()
         observeLiveData()
     }
 
     private fun setupRecyclerView() {
         binding.recyclerViewFavoriteMovies.adapter = favoriteMoviesAdapter
+    }
+
+    private fun setupSwipeRefreshListener() {
+        binding.swipeRefreshLayoutFavoriteMovies.setOnRefreshListener {
+            onRefresh()
+        }
     }
 
     private fun observeLiveData() {

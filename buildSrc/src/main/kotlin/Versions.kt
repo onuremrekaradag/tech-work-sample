@@ -57,4 +57,8 @@ object Versions {
     const val room = "2.4.3"
     //endregion
 
+    //region Room
+    const val swipeRefreshLayout = "1.1.0"
+    //endregion
+
 }

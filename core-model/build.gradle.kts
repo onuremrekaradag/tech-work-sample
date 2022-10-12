@@ -41,6 +41,5 @@ dependencies {
     //region Room
     implementation(Dependencies.roomRuntime)
     annotationProcessor(Dependencies.roomCompilerAP)
-    kapt(Dependencies.roomCompilerKapt)
     //endregion
 }

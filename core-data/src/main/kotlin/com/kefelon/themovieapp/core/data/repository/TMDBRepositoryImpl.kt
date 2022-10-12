@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class TMDBRepositoryImpl @Inject constructor(
     private val tmdbService: TMDBService,
-    private val movieDao: MovieDao,
+    // private val movieDao: MovieDao,
 ) : TMDBRepository {
 
     override suspend fun getPopularMovies(page: Int): Result<MovieResponse> {
@@ -32,15 +32,18 @@ class TMDBRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getFavoriteMovies(): List<MovieDetail> {
-        return movieDao.getAll()
+        // return movieDao.getAll()
+
+        return arrayListOf()
     }
 
     override fun setFavoriteMovie(movieDetail: MovieDetail) {
-        movieDao.insertMovie(movieDetail)
+        // movieDao.insertMovie(movieDetail)
     }
 
     override fun deleteFavoriteMovie(movieDetail: MovieDetail) {
-        movieDao.delete(movieDetail)
+        //movieDao.delete(movieDetail)
+
     }
 
 

@@ -67,5 +67,8 @@ object Dependencies {
     val roomCompilerKapt by lazy { "androidx.room:room-compiler:${Versions.room}" }
     //endregion
 
+    //region Swipe Refresh Layout
+    val swipeRefreshLayout by lazy { "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayout}" }
+    //endregion
 
 }
