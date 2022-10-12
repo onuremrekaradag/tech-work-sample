@@ -1,7 +1,7 @@
 package com.kefelon.themovieapp.core.data.repository
 
-import MovieDao
 import com.kefelon.core.network.service.TMDBService
+import com.kefelon.themovieapp.core.database.dao.MovieDao
 import com.kefelon.themovieapp.core.model.MovieDetail
 import com.kefelon.themovieapp.core.model.MovieResponse
 import javax.inject.Inject

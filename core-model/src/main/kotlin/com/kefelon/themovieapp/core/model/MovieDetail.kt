@@ -3,6 +3,7 @@ package com.kefelon.themovieapp.core.model
 import ProductionCountries
 import SpokenLanguages
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "movie_detail")
@@ -20,6 +21,7 @@ data class MovieDetail(
     @SerializedName("homepage")
     var homePage: String,
     @SerializedName("id")
+    @PrimaryKey
     var id: Int,
     @SerializedName("imdb_id")
     var imdbId: String?,

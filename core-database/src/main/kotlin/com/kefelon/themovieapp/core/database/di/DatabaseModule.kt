@@ -1,14 +1,13 @@
 package com.kefelon.themovieapp.core.database.di
 
-import MovieDao
-import MovieDatabase
 import android.app.Application
 import androidx.room.Room
+import com.kefelon.themovieapp.core.database.dao.MovieDao
+import com.kefelon.themovieapp.core.database.database.MovieRoomDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -17,18 +16,18 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideMovieDatabase(
+    fun provideMovieRoomDatabase(
         application: Application,
-    ): MovieDatabase {
+    ): MovieRoomDatabase {
         return Room
-            .databaseBuilder(application, MovieDatabase::class.java, "TMA.db")
+            .databaseBuilder(application, MovieRoomDatabase::class.java, "TMA.db")
             .fallbackToDestructiveMigration()
             .build()
     }
 
     @Provides
     @Singleton
-    fun provideMovieDao(movieDatabase: MovieDatabase): MovieDao {
-        return movieDatabase.movieDao()
+    fun provideMovieDao(movieRoomDatabase: MovieRoomDatabase): MovieDao {
+        return movieRoomDatabase.movieDao()
     }
 }
