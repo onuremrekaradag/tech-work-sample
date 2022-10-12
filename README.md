@@ -20,10 +20,10 @@ and more in this project.
 
 
 ## Movies
-<img src="https://i.imgur.com/yQtDb9q.png" width="40%" height="40%">
+<img src="https://i.imgur.com/5v17VNa.jpg" width="30%" height="30%">
 
 ## Favorite Movies
-<img src="https://i.imgur.com/5UvIzby.png" width="40%" height="40%">
+<img src="https://i.imgur.com/5UvIzby.png" width="30%" height="30%">
 
 ## Movie Detail
-<img src="https://i.imgur.com/Ox2AV49.png" width="40%" height="40%">
+<img src="https://i.imgur.com/2xFji69.jpg" width="30%" height="30%">
