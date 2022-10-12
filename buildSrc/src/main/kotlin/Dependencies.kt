@@ -56,10 +56,6 @@ object Dependencies {
     val circleImageView by lazy { "de.hdodenhof:circleimageview:${Versions.circleImageView}" }
     //endregion
 
-    //region TransformationLayout
-    val transformationLayout by lazy { "com.github.skydoves:transformationlayout:${Versions.transformationLayout}" }
-    //endregion
-
 
     //region Room
     val roomRuntime by lazy { "androidx.room:room-runtime:${Versions.room}" }
