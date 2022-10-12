@@ -13,29 +13,163 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient">
 
         <ImageView
             android:id="@+id/image_view_poster_back"
             loadImageUrl="@{movieDetailViewModel.movieDetailLiveData.backdropPath}"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="350dp"
             android:background="@color/gray"
             android:gravity="top"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:text="MOVIE DETAIL"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/gray" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/background_gradient_transparent"
+            app:layout_constraintBottom_toBottomOf="@id/image_view_poster_back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/image_view_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/icon_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_view_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/icon_favorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_movie_image"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            app:cardBackgroundColor="@color/gray"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/text_view_movie_title"
+            app:layout_constraintStart_toStartOf="@+id/text_view_movie_title">
+
+            <ImageView
+                android:id="@+id/image_view_movie"
+                loadImageUrl="@{movieDetailViewModel.movieDetailLiveData.posterPath}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@color/gray" />
+        </androidx.cardview.widget.CardView>
+
         <TextView
+            android:id="@+id/text_view_movie_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="start"
             android:text="@{movieDetailViewModel.movieDetailLiveData.title}"
-            app:layout_constraintTop_toBottomOf="@+id/image_view_poster_back"
-            tools:text="Name" />
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="@id/image_view_poster_back"
+            tools:text="Black Mirror \nSeason 1" />
 
+        <LinearLayout
+            android:id="@+id/linear_layout_imdb_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_view_poster_back">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/imdb_logo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_rate_icon" />
+
+            <TextView
+                android:id="@+id/text_view_imdb_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/luxora_bold"
+                android:text="@{``+movieDetailViewModel.movieDetailLiveData.voteAverage}"
+                android:textColor="@color/imdb_yellow"
+                android:textSize="13dp"
+                tools:text="7.8/10" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_view_tagline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/luxora_bold_italic"
+            android:text="@{movieDetailViewModel.movieDetailLiveData.tagline}"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/linear_layout_imdb_section"
+            app:layout_constraintTop_toBottomOf="@id/linear_layout_imdb_section"
+            tools:text="There's always been something wrong with Esther." />
+
+
+        <TextView
+            android:id="@+id/text_view_overview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/luxora_bold"
+            android:text="Overview"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="@+id/linear_layout_imdb_section"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_tagline" />
+
+
+        <TextView
+            android:id="@+id/text_view_overview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:text="@{movieDetailViewModel.movieDetailLiveData.overView}"
+            android:textColor="@color/gray"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".0"
+            app:layout_constraintStart_toStartOf="@id/linear_layout_imdb_section"
+            app:layout_constraintTop_toBottomOf="@id/text_view_overview_title"
+            tools:text="There's always been something wrong with Esther." />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -49,4 +49,8 @@ object Versions {
     const val circleImageView = "3.1.0"
     //endregion
 
+    //region TransformationLayout
+    const val transformationLayout = "1.1.1"
+    //endregion
+
 }

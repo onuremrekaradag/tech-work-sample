@@ -1,5 +1,6 @@
 package com.kefelon.themovieapp.ui.main.adapter
 
+import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -12,10 +13,14 @@ import com.kefelon.themovieapp.databinding.ItemMovieBinding
 class MovieAdapter(
     val list: ArrayList<Movie>,
     private val movieAdapterInterface: MovieAdapterInterface
-) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(), MovieAdapterInterface {
+
 
     class MovieViewHolder(var binding: ItemMovieBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        private var onClickedAt = 0L
+
         fun bind(
             movie: Movie,
             movieAdapterInterface: MovieAdapterInterface
@@ -51,6 +56,10 @@ class MovieAdapter(
         val lastIndex = itemCount
         list.addAll(movieList)
         notifyItemRangeInserted(lastIndex, movieList.size);
+    }
+
+    override fun onMovieClicked(movie: Movie) {
+
     }
 
 }

@@ -24,29 +24,10 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
     BaseActivityListener {
 
     lateinit var imm: InputMethodManager
+    lateinit var binding: DB
 
     @LayoutRes
     abstract fun getLayoutRes(): Int
-
-    /*
-    * Accessed in base
-    * SubActivities can't reach this binding
-    * Runs for base
-    */
-    private lateinit var baseBinding: ActivityBaseBinding
-
-    /*
-     * Binding for subActivities
-     * Will use on subActivities
-     */
-    val binding by lazy {
-        DataBindingUtil.inflate(
-            layoutInflater,
-            getLayoutRes(),
-            findViewById<FrameLayout>(R.id.frame_layout_activity_content),
-            true
-        ) as DB
-    }
 
     //Inject view model in activities with "by viewModels()"
     protected abstract val mViewModel: VM
@@ -54,8 +35,8 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        baseBinding = DataBindingUtil.setContentView(this, R.layout.activity_base)
-        baseBinding.listener = this
+        binding = DataBindingUtil.setContentView(this, getLayoutRes())
+        binding.lifecycleOwner = this
 
         imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     }

@@ -117,6 +117,10 @@ dependencies {
     implementation(Dependencies.circleImageView)
     //endregion
 
+    //region Transformationlayout
+    implementation(Dependencies.transformationLayout)
+    //endregion
+
     testImplementation(Dependencies.junit)
 
     //region Modules
