@@ -1,85 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_gradient">
+        android:background="@drawable/background_gradient"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".CollapsingToolbar">
 
-        <TextView
-            android:id="@+id/text_view_hello"
-            android:layout_width="wrap_content"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/luxora_bold"
-            android:text="Hello"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:background="@color/background_gradient_end"
+            android:fitsSystemWindows="true"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/text_view_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/luxora_thin"
-            android:text="Onur!"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            app:layout_constraintStart_toEndOf="@id/text_view_hello"
-            app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="@color/background_gradient_start"
+                app:expandedTitleMarginEnd="64dp"
+                app:expandedTitleMarginStart="48dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-        <TextView
-            android:id="@+id/text_view_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/luxora_regular"
-            android:paddingBottom="10dp"
-            android:text="Find your favorite movies"
-            android:textColor="@color/gray"
-            android:textSize="18dp"
-            app:layout_constraintStart_toStartOf="@id/text_view_hello"
-            app:layout_constraintTop_toBottomOf="@id/text_view_hello" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="30dp"
+                    app:layout_collapseMode="parallax"
+                    app:scrimAnimationDuration="120">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/image_view_avatar"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="30dp"
-            android:fontFamily="@font/luxora_thin"
-            android:src="@drawable/me"
-            android:text="Find your favorite movies"
-            android:textColor="@color/gray"
-            android:textSize="18dp"
-            app:civ_border_color="#FFFFFF"
-            app:civ_border_width="1dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/text_view_hello"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="40dp"
+                        android:fontFamily="@font/luxora_bold"
+                        android:text="Hello"
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_view_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="40dp"
+                        android:fontFamily="@font/luxora_thin"
+                        android:text="Onur!"
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        app:layout_constraintStart_toEndOf="@id/text_view_hello"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_view_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/luxora_regular"
+                        android:paddingBottom="10dp"
+                        android:text="Find your favorite movies"
+                        android:textColor="@color/gray"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="@id/text_view_hello"
+                        app:layout_constraintTop_toBottomOf="@id/text_view_hello" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/image_view_avatar"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="30dp"
+                        android:fontFamily="@font/luxora_thin"
+                        android:src="@drawable/me"
+                        android:text="Find your favorite movies"
+                        android:textColor="@color/gray"
+                        android:textSize="18dp"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="1dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/luxora_bold"
+                        android:text="The Movie App"
+                        android:textColor="@color/white" />
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nested_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="110dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_view_description">
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingBottom="100dp">
 
                 <TextView
                     android:id="@+id/text_view_popular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="30dp"
                     android:fontFamily="@font/luxora_bold"
                     android:text="Popular"
                     android:textColor="@color/white"
@@ -113,7 +159,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/text_view_popular"
                     tools:listitem="@layout/item_movie" />
 
-
                 <TextView
                     android:id="@+id/text_view_now_playing"
                     android:layout_width="wrap_content"
@@ -140,7 +185,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/text_view_now_playing"
                     tools:listitem="@layout/item_movie" />
-
 
                 <TextView
                     android:id="@+id/text_view_top_rated"
@@ -221,7 +265,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
