@@ -11,6 +11,7 @@ The Movie App is The Movie Data Base(TMDB) based Android app which powered by up
 - DataBinding
 - Room
 - Hilt
+- ViewPager2
 - MVVM Architecture (View - DataBinding - ViewModel - Model)
 - Repository Pattern
 - Retrofit2 & OkHttp3
