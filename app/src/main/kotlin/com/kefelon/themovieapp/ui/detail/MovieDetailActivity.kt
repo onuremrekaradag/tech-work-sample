@@ -11,8 +11,6 @@ import com.kefelon.themovieapp.databinding.ActivityMainBinding
 import com.kefelon.themovieapp.databinding.ActivityMovieDetailBinding
 import com.kefelon.themovieapp.ui.main.adapter.MainPagerAdapter
 import com.kefelon.themovieapp.ui.main.enum.MainPagerEnum
-import com.skydoves.transformationlayout.TransformationCompat
-import com.skydoves.transformationlayout.TransformationLayout
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 

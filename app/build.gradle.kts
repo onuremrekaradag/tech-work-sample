@@ -117,10 +117,6 @@ dependencies {
     implementation(Dependencies.circleImageView)
     //endregion
 
-    //region Transformationlayout
-    implementation(Dependencies.transformationLayout)
-    //endregion
-
     //region Swipe Refresh Layout
     implementation(Dependencies.swipeRefreshLayout)
     //endregion

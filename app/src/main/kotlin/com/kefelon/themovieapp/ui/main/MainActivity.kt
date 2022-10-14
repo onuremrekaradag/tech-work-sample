@@ -10,7 +10,6 @@ import com.kefelon.themovieapp.base.BaseActivity
 import com.kefelon.themovieapp.databinding.ActivityMainBinding
 import com.kefelon.themovieapp.ui.main.adapter.MainPagerAdapter
 import com.kefelon.themovieapp.ui.main.enum.MainPagerEnum
-import com.skydoves.transformationlayout.TransformationCompat.onTransformationStartContainer
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
