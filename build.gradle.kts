@@ -6,6 +6,7 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.7.10" apply false
     id("com.google.dagger.hilt.android") version "2.44" apply false
 
+    //deneme master
 }
 
 
