@@ -10,6 +10,8 @@ android {
     compileSdk = Configuration.compileSdk
 
 
+    //deneme 2
+
     defaultConfig {
         applicationId = "com.kefelon.themovieapp"
         minSdk = Configuration.minSdk
